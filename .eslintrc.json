@@ -1,0 +1,51 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "rules": {
+        "react/prop-types": "off" //ignore prop-types eslint validation
+      }
+    }
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "next"
+  ],
+  "rules": {
+    "indent": ["warn", 2, { "SwitchCase": 1 }],
+    "@typescript-eslint/no-var-requires": 0, //allow require imports
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@next/next/no-img-element": "off",
+    "no-var": "error",
+    "eqeqeq": "error",
+    "quotes": ["error", "single"],
+    "arrow-parens": ["warn", "as-needed"],
+    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
+    "react/no-unknown-property": ["error", { "ignore": ["global", "jsx"] }],
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+.verified {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.check {
+  width: 33px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--green);
+  border-radius: 50%;
+  margin-bottom: 13.5px;
+
+  svg {
+    fill: none;
+    stroke: var(--green);
+  }
+}
+
+.txt {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 55px;
+  color: var(--white);
+  margin-bottom: 32px;
+}
+
+.btn {
+  width: 100%;
+}
+
+@media (max-width: $mobile-big) {
+  .verified {
+    width: 100%;
+
+    .txt {
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 38px;
+    }
+  }
+}

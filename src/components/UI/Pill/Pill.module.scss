@@ -1,0 +1,82 @@
+.pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  padding: 0 11px;
+  border: 1px solid var(--grey-500);
+  background-color: transparent;
+  border-radius: 8px;
+  transition: border-color var(--transition);
+
+  .label,
+  .label--count,
+  .count {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    color: var(--grey-500);
+    transition: color var(--transition);
+  }
+
+  .close {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    margin-left: 10px;
+
+    svg {
+      width: 10.5px;
+      height: 10.5px;
+      fill: var(--grey-500);
+      transition: fill var(--transition);
+    }
+  }
+
+  .label--count {
+    margin-right: 2px;
+  }
+
+  &.hover {
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--white);
+
+        svg {
+          fill: var(--white);
+        }
+
+        .label,
+        .label--count,
+        .count {
+          color: var(--white);
+        }
+      }
+    }
+  }
+}
+
+.pill-downloads {
+  padding: 0 16px 0 8px;
+
+  .downloads-btn {
+    width: 18px;
+    height: 18px;
+    background-color: transparent;
+    border: 0;
+    margin-right: 8px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--yellow);
+    }
+  }
+}
+
+.pill-track-info {
+  padding: 0 16px;
+}

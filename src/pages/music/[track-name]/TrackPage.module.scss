@@ -1,0 +1,31 @@
+.track-header-container {
+  margin-bottom: 208px;
+}
+
+.track-list-container {
+  margin-bottom: 220px;
+
+  .title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 66px;
+    text-align: center;
+    margin-bottom: 44px;
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .track-header-container {
+    margin-bottom: 68px;
+  }
+
+  .track-list-container {
+    margin-bottom: 80px;
+
+    .title {
+      font-size: 30px;
+      line-height: 38px;
+      margin-bottom: 10px;
+    }
+  }
+}

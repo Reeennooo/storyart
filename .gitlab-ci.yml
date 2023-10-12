@@ -1,0 +1,48 @@
+image: node:16-alpine
+
+stages:
+  - skip
+  - setup
+  - build
+
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+
+.dependencies_cache:
+  cache:
+    key:
+      files:
+        - package-lock.json
+    paths:
+      - .npm
+    policy: pull
+
+skip-merge-request-pipeline-job:
+  stage: skip
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME != "main"
+  script:
+    - echo "No testing happens here. This pipeline always succeeds, and enables merge."
+    - echo true
+
+setup-job:
+  stage: setup
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+  script:
+    - npm ci
+  extends: .dependencies_cache
+  cache:
+    policy: pull-push
+  artifacts:
+    expire_in: 1h
+    paths:
+      - node_modules
+
+build-job:
+  stage: build
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"
+  script:
+    - npm run lint
+    - npm run build

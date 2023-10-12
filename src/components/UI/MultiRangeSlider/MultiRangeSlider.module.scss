@@ -1,0 +1,129 @@
+.hidden {
+  position: absolute;
+  left: 10000px;
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2px;
+
+  .slider {
+    position: relative;
+
+    &__track,
+    &__range,
+    &__left-value,
+    &__right-value {
+      position: absolute;
+    }
+
+    &__track,
+    &__range {
+      // Полоска передняя
+      border-radius: 4px;
+      height: 4px;
+    }
+
+    &__track {
+      // Полоска задняя
+      background-color: #54492e;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &__range {
+      //Полоска передняя
+      background-color: var(--yellow);
+      z-index: 2;
+    }
+
+    &__left-value,
+    &__right-value {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      top: -46px;
+
+      background-color: var(--yellow);
+      cursor: pointer;
+      border-radius: 100% 100% 0;
+      rotate: 45deg;
+
+      span {
+        display: inline-block;
+        color: var(--main-grey);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        rotate: -45deg;
+      }
+    }
+  }
+}
+
+/* Сброс дефолтных */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  // точки
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  outline: none;
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+.thumb--zindex-5 {
+  z-index: 5;
+}
+
+/* Chrome */
+.thumb::-webkit-slider-thumb {
+  // точки
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* Firefox */
+.thumb::-moz-range-thumb {
+  background-color: var(--yellow);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+
+@media (max-width: $tablet) {
+  .slider-container {
+    margin: 0;
+  }
+}

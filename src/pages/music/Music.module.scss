@@ -1,0 +1,17 @@
+.music-container {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.music {
+  &__track-list {
+    flex: 1 1 auto;
+  }
+}
+
+@media (max-width: $tablet) {
+  .music-container {
+    flex-direction: column;
+  }
+}

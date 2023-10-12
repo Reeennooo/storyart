@@ -1,0 +1,57 @@
+.share {
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--white);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    cursor: pointer;
+
+    &.twitter {
+      svg {
+        fill: #00AAEC;
+      }
+    }
+
+    &.whatsapp {
+      svg {
+        fill: #67C15E;
+      }
+    }
+
+    &.facebook {
+      svg {
+        fill: #0C66EE;
+      }
+
+      path {
+        fill: var(--white);
+      }
+    }
+
+    &.copy-link {
+      svg {
+        fill: none;
+        stroke: #FFC93F;
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+
+    button, a {
+      display: inline-flex;
+      align-items: center;
+      border: none;
+      background: none;
+      padding: 0;
+    }
+  }
+}

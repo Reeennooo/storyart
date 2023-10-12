@@ -1,0 +1,106 @@
+.popup {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  z-index: 5;
+  top: 35px;
+  right: 0;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 10px 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+
+    .item-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: var(--grey-700);
+    }
+  }
+
+  .actions {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--white);
+    display: inline-block;
+    background-color: var(--grey-800);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .share {
+    opacity: 0;
+    pointer-events: none;
+    padding-right: 4px;
+
+    &-list {
+      display: inline-block;
+      background-color: var(--grey-800);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    &.is-show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+// }
+
+.share-list {
+  :global {
+    li {
+      @media (hover: hover) {
+        &:hover {
+          background-color: var(--grey-700);
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  border: none;
+  background: none;
+  padding: 0;
+  display: inline-flex;
+
+  @media (hover: hover) {
+    &:hover {
+      .dots-icon {
+        fill: var(--yellow-light);
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .popup-btn {
+    width: 18px;
+    height: 18px;
+
+    .dots-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

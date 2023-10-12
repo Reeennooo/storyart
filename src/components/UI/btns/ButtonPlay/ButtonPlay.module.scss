@@ -1,0 +1,44 @@
+.button-play {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: var(--transition);
+
+  svg {
+    width: 13px;
+    height: 16px;
+    fill: var(--white);
+    margin-left: 3px;
+  }
+
+  &.is-active {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--main-grey);
+      margin-left: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--yellow-light);
+        border-color: var(--yellow-light);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--yellow-light);
+    }
+  }
+}

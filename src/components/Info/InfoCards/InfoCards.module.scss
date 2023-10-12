@@ -1,0 +1,163 @@
+.card-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 800px;
+  background-color: var(--grey-800);
+  border-radius: 12px;
+  padding: 32px;
+
+  &--faq {
+    cursor: pointer;
+
+    &:hover {
+      .header-wrapper {
+        .title {
+          color: var(--yellow-light);
+        }
+
+        .open-btn {
+          svg {
+            stroke: var(--yellow-light);
+          }
+        }
+      }
+    }
+  }
+
+  .header-wrapper {
+    display: flex;
+    align-items: self-start;
+
+    .title {
+      transition: color var(--transition);
+      font-weight: 700;
+      line-height: 32px;
+    }
+
+    .open-btn {
+      background-color: transparent;
+      border: none;
+      margin-left: auto;
+      min-width: 24px;
+      min-height: 24px;
+
+      svg {
+        stroke: var(--white);
+        transition: stroke var(--transition);
+      }
+    }
+  }
+
+  .text-wp {
+    overflow: hidden;
+    transition: height var(--transition);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: pre-line;
+    margin-bottom: 56px;
+    padding-top: 8px;
+  }
+}
+
+.text-wrapper {
+  margin-bottom: 56px;
+
+  p {
+    display: inline-block;
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    color: #0c89d3;
+  }
+}
+
+.card-wrapper-faq {
+  cursor: pointer;
+}
+
+.card-wrapper:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1240px) {
+  .card-wrapper {
+    &--faq {
+      max-width: 666px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: $desktop) {
+  .card-wrapper {
+    .text {
+      white-space: pre-line;
+    }
+
+    &--faq {
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .card-wrapper {
+    &--faq {
+      max-width: 550px;
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .card-wrapper {
+    padding: 24px;
+
+    .header-wrapper {
+      .title {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+    &--faq {
+      max-width: none;
+    }
+  }
+
+  .text-wrapper {
+    margin-bottom: 44px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .card-wrapper {
+    &--faq {
+      max-width: 362px;
+    }
+  }
+}
+
+@media (max-width: $mobile-lr) {
+  .card-wrapper {
+    &--faq {
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+@mixin transition($element: all, $time: 0.25s, $function: linear) {
+  transition: $time $function;
+  transition-property: #{$element};
+}
+
+@mixin transition-cubic(
+  $time: 0.25s,
+  $function: cubic-bezier(1, 0, 0, 1),
+  $element: all
+) {
+  transition: $element $time $function;
+}
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}
+
+@mixin scrollbar(
+  $width: 8px,
+  $rail-color: var(--grey-800),
+  $bar-color: var(--grey-700),
+  $bar-color-hover: none,
+  $bar-color-border: var(--grey-700)
+) {
+  scrollbar-color: $bar-color $rail-color;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $width;
+    background-color: $rail-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $rail-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $bar-color;
+    border: 2px solid $bar-color-border;
+
+    &:hover {
+      background-color: $bar-color-hover;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 630px;
+  z-index: 0;
+  overflow: hidden;
+
+  &__inner {
+    position: relative;
+    height: inherit;
+    padding-top: 186px;
+  }
+
+  .video-wp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    opacity: 0;
+
+    &--visible {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      background: linear-gradient(to bottom, transparent 50%, var(--main-grey));
+    }
+  }
+
+  &__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__txt {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 49px;
+    margin-bottom: 12px;
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+
+    br {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $mobile-big) {
+  .hero {
+    &__title {
+      font-weight: 700;
+      font-size: 38px;
+      line-height: 36px;
+    }
+
+    &__subtitle {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+
+      br {
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .hero {
+    &__inner {
+      padding-top: 164px;
+    }
+
+    &__title {
+      font-size: 28px;
+    }
+  }
+}

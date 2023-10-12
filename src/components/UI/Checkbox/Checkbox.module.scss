@@ -1,0 +1,70 @@
+// СТИЛИ КАСТОМНОГО ЧЕКБОКСА
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+
+  input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .fake-checkbox {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  // Вид чекбокса
+  .fake-checkbox::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #515151;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  // Вид чекбокса в состоянии checked
+  input:checked + .fake-checkbox::before {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    background-image: url('/assets/svg/colored/checked.svg');
+    background-repeat: no-repeat;
+    background-size: 12px 10px;
+  }
+
+  // hover
+  input:not(:disabled):not(:checked) + .fake-checkbox:hover {
+    &::before {
+      border-color: var(--yellow-light);
+    }
+  }
+
+  // hover если чекбокс чекнут
+  input:not(:disabled):checked + .fake-checkbox:hover {
+    &::before {
+      border-color: var(--yellow-light);
+      background-color: var(--yellow-light);
+    }
+  }
+
+  // Состояние disable
+  input:disabled + .fake-checkbox::before {
+    opacity: 0.4;
+  }
+}
+
+// Стили для текста label
+.label {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--grey-500);
+  cursor: pointer;
+}

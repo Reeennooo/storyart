@@ -1,0 +1,34 @@
+.avatar {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  color: var(--grey-500);
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid var(--yellow);
+    border-radius: inherit;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+  }
+
+  &--lg {
+    width: 80px;
+    height: 80px;
+  }
+}

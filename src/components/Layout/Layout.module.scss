@@ -1,0 +1,15 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background-color: var(--main-grey);
+
+  .app-main-content {
+    min-height: calc(100vh - 250px);
+    flex: 1 1 auto;
+  }
+}
+
+.app--player-ident {
+  padding-bottom: 102px;
+}

@@ -1,0 +1,128 @@
+.settings {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  grid-gap: 44px 24px;
+
+  .item {
+    position: relative;
+
+    &:first-child {
+      grid-column: 3 span;
+      max-width: calc((100% - 48px) / 3);
+    }
+  }
+
+  .error {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    color: var(--yellow);
+  }
+
+  .title {
+    display: flex;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--yellow);
+    margin-bottom: 12px;
+  }
+}
+
+.input {
+  input {
+    background-color: var(--main-grey);
+
+    label {
+      background-color: red;
+    }
+  }
+
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px var(--main-grey) inset;
+    -webkit-text-fill-color: var(--grey-300);
+    caret-color: var(--grey-300);
+  }
+}
+
+// With Google
+.soc-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-left: 4px;
+}
+
+.title-wp {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+
+  span {
+    color: var(--yellow);
+  }
+}
+
+.item {
+  max-width: 400px;
+}
+
+@media (max-width: $tablet-sm) {
+  .settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 0;
+    max-width: 554px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .item,
+    .btn {
+      width: 100%;
+      margin-bottom: 12px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .item {
+      max-width: none;
+
+      &:first-child {
+        max-width: none;
+        margin-bottom: 44px;
+      }
+    }
+
+    .btn {
+      margin-top: 32px;
+    }
+
+    .btnCancel {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .settings {
+    .title {
+      font-size: 18px;
+      line-height: 26px;
+      color: var(--yellow);
+    }
+  }
+
+  .title-wp {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}

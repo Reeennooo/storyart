@@ -1,0 +1,52 @@
+{
+  "name": "start-next-ts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --quiet && stylelint --q \"**/*.{css,scss}\"",
+    "lint:style": "stylelint \"**/*.{css,scss}\"",
+    "prettier": "prettier --write \"**/*.{jsx,js,tsx,ts,json}\"",
+    "lint:fix": "npm run lint -- --fix && npm run prettier"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.9.3",
+    "@types/node": "18.14.2",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "axios": "^1.4.0",
+    "cookies-next": "^2.1.1",
+    "formik": "^2.2.9",
+    "next": "13.2.1",
+    "next-redux-wrapper": "^7.0.5",
+    "nextjs-progressbar": "^0.0.16",
+    "rc-slider": "^10.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.5",
+    "react-share": "^4.4.1",
+    "sharp": "^0.32.0",
+    "typescript": "4.9.5",
+    "use-isomorphic-layout-effect": "^1.1.2",
+    "wavesurfer.js": "6.6.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
+    "@types/wavesurfer.js": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
+    "eslint-config-next": "^13.2.3",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "stylelint": "^15.2.0",
+    "stylelint-config-recommended-scss": "^9.0.1",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0"
+  }
+}

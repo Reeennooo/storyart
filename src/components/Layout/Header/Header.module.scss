@@ -1,0 +1,171 @@
+.header-hidden {
+  display: none;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+
+  transition: background-color 0.3s ease-in-out;
+
+  &__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white);
+  }
+
+  &__logo-wp {
+    .header__logo {
+      display: block;
+      width: 195px;
+      height: 46px;
+      fill: var(--yellow);
+    }
+  }
+
+  &__logo-wp--home {
+    cursor: inherit;
+  }
+
+  &__btns-wp {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-right: 12px;
+    width: 116px;
+  }
+
+  .btn-login {
+    width: 88px;
+  }
+
+  .user {
+    max-width: 216px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .avatar {
+      margin-right: 12px;
+    }
+
+    .name {
+      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 160px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  // Состояния хедера при скроле
+  &.is-scrolled {
+    background-color: var(--main-grey);
+    transition: background-color var(--transition);
+  }
+
+  //&.search-open {
+  //  .header__inner {
+  //    background-color: var(--main-grey);
+  //  }
+  //}
+
+  .tablet-btns {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 3px;
+
+  span {
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--yellow);
+    margin: 2px 0;
+    transition: transform var(--transition);
+  }
+
+  &.is-active {
+    span {
+      &:nth-child(1) {
+        transform: translateY(6px) rotate(225deg);
+      }
+
+      &:nth-child(2) {
+        transform: translateY(0) rotate(-225deg);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(360deg);
+        animation: burger;
+        animation-duration: 0.3s;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+@keyframes burger {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: $tablet) {
+  .header {
+    &__inner {
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .header {
+    &__logo-wp {
+      .header__logo {
+        width: 134px;
+        height: 32px;
+      }
+    }
+
+    .burger {
+      span {
+        width: 18px;
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-lr) {
+  .header {
+    .tablet-btns {
+      padding-right: 0;
+    }
+  }
+}

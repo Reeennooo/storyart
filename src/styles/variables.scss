@@ -1,0 +1,28 @@
+:root {
+  // colors
+  --main-grey: #191919;
+  --grey-700: #515151;
+  --grey-750: #303030;
+  --grey-300: #d1d1d1;
+  --grey-500: #7c7c7c;
+  --grey-800: #292929;
+  --black: #151515;
+  --white: #ffffff;
+  --yellow: #ffc93f;
+  --green: #3fff5d;
+  --red: #eb7e79;
+
+  --yellow-light: #ffce52;
+
+  // tranistion
+  --transition: 0.3s ease;
+
+  // el-sises
+  --header-height: 86px;
+  --applied-filter-height: 95px;
+
+  --header-height-tablet: 78px;
+
+  --header-height-mob: 64px;
+  --applied-filter-height-mob: 144px;
+}

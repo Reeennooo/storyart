@@ -1,0 +1,76 @@
+.btn {
+  background: var(--yellow);
+  border: none;
+  outline: none;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  height: 40px;
+  transition: all var(--transition);
+
+  &__txt {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    white-space: nowrap;
+    color: var(--main-grey);
+  }
+
+  &__icon-wp {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  svg {
+    fill: var(--main-grey);
+  }
+
+  &:hover {
+    background-color: var(--yellow-light);
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+
+    .btn__txt {
+      color: var(--yellow);
+    }
+
+    svg {
+      stroke: var(--white);
+    }
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--yellow-light);
+    }
+  }
+
+  &--society {
+    background-color: var(--grey-750);
+    border: 1px solid var(--grey-750);
+
+    .btn__txt {
+      color: var(--white);
+    }
+
+    &:hover {
+      background-color: var(--grey-750);
+      border-color: var(--yellow-light);
+    }
+  }
+
+  &--with-icon {
+    padding: 0 24px 0 16px;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.4;
+  }
+}

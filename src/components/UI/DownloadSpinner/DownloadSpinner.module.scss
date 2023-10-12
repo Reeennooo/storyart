@@ -1,0 +1,41 @@
+.progress-ring-wp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 24px;
+  height: 24px;
+
+  &__ident--right {
+    margin-right: 12px;
+  }
+
+  .progress-ring {
+    position: absolute;
+
+    &__circle {
+      transform-origin: center;
+      transform: rotate(-90deg);
+      transition: stroke-dashoffset 0.3s;
+    }
+  }
+
+  span {
+    position: absolute;
+    font-size: 6.5px;
+    color: var(--grey-500);
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .progress-ring-wp {
+    &-mobile {
+      width: 20px;
+      height: 20px;
+
+      span {
+        font-size: 5px;
+      }
+    }
+  }
+}

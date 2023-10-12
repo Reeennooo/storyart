@@ -1,0 +1,59 @@
+.main {
+  &--video {
+    padding-top: 483px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &--music {
+    //padding-top: 118px;
+  }
+
+  &--info {
+    padding-top: 186px;
+  }
+
+  &--track {
+    padding-top: 186px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &--profile {
+    padding-top: 118px;
+    padding-bottom: 220px;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.logo {
+  margin-bottom: 30px;
+}
+
+@media (max-width: $tablet) {
+  .main {
+    &--info {
+      padding-top: 164px;
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .main {
+    &--video {
+      padding-top: 396px;
+    }
+
+    &--track {
+      padding-top: 144px;
+    }
+
+    &--profile {
+      padding-top: 96px;
+      padding-bottom: 80px;
+    }
+  }
+}

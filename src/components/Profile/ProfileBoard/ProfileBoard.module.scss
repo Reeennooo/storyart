@@ -1,0 +1,32 @@
+.tabs {
+  margin-bottom: 44px;
+  white-space: nowrap;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--yellow-light);
+    }
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  .tabs {
+    max-width: 396px;
+    margin: 0 auto 44px;
+  }
+}
+
+@media (max-width: $mobile-sm) {
+  .tabs {
+    width: calc(100% + 32px);
+    transform: translateX(-16px);
+    padding: 0 16px;
+  }
+}

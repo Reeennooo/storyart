@@ -1,0 +1,147 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  max-width: 100vw;
+  //overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+svg {
+  fill: currentColor;
+
+  &.stroke-icon {
+    fill: none;
+    stroke: currentColor;
+  }
+
+  a &,
+  button & {
+    pointer-events: none;
+  }
+
+  &:not(:root) {
+    overflow: hidden; // Скрыть выступающее за границы в IE
+  }
+}
+
+body {
+  position: relative;
+  background: var(--body-bg);
+  font-family: var(--manrope-font), -apple-system, sans-serif;
+  color: rgb(var(--foreground-rgb));
+  text-align: left;
+  cursor: default;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--white);
+}
+
+li {
+  line-height: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+blockquote {
+  font-style: italic;
+  margin: 0 0 0 20px;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  background-color: transparent;
+}
+
+// [contenteditable='true']:empty:before {
+//   content: attr(data-placeholder);
+//   color: #131313;
+//   font-size: inherit;
+//   display: block; /* For Firefox */
+// }
+
+select {
+  appearance: none;
+
+  &::-ms-expand {
+    // для IE
+    display: none;
+  }
+}
+
+pre {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  overflow-x: auto;
+  tab-size: 2;
+  background-color: rgba(#000, 0.08);
+
+  code {
+    background: transparent;
+  }
+}
+
+code {
+  padding: 0.06em 0.3em;
+  color: #000;
+  background-color: rgba(#000, 0.08);
+  border-radius: 3px;
+}
+
+kbd {
+  padding: 0.06em 0.3em;
+  color: #000;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 3px;
+
+  kbd {
+    padding: 0;
+  }
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  position: absolute;
+  left: -9999px;
+}

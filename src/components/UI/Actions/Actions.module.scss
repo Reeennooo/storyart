@@ -1,0 +1,107 @@
+.actions,
+.player-actions {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+
+  .btn {
+    position: relative;
+    display: inline-flex;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 12px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .icon {
+          fill: var(--yellow-light);
+        }
+
+        .icon-star {
+          stroke: var(--yellow-light);
+        }
+      }
+    }
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: var(--grey-500);
+      transition: var(--transition);
+      pointer-events: none;
+
+      &.active {
+        fill: var(--yellow-light);
+      }
+    }
+
+    .icon-star {
+      fill: none;
+      stroke: var(--grey-500);
+      transition: stroke var(--transition);
+      cursor: pointer;
+
+      &.is-active {
+        fill: var(--yellow);
+        stroke: none;
+      }
+    }
+  }
+
+  .slider-container {
+    position: absolute;
+    width: 18px;
+    height: 96px;
+    top: -108px;
+    left: 3px;
+    padding: 8px 0;
+    background-color: var(--grey-800);
+    border-radius: 5px;
+    visibility: visible;
+    transition: opacity var(--transition);
+    opacity: 1;
+  }
+
+  .slider-hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.check {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--yellow);
+  margin-right: 12px;
+}
+
+@media (max-width: $tablet-sm) {
+  .actions {
+    justify-content: flex-end;
+
+    .btn {
+      .icon,
+      .icon-star {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+  }
+
+  .player-actions {
+    display: none;
+  }
+}

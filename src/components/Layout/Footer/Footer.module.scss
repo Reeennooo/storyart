@@ -1,0 +1,135 @@
+.footer {
+  position: relative;
+  background-color: var(--black);
+  overflow: hidden;
+}
+
+.footer--hidden {
+  display: none;
+}
+
+.footer--music {
+  margin-top: 220px;
+}
+
+.bg {
+  position: absolute;
+  width: 104%;
+  height: auto;
+  top: -10px;
+  left: -22px;
+}
+
+.footer-container {
+  position: relative;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 50px 40px;
+  row-gap: 80px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'logo links'
+    'copy-right social-links';
+  z-index: 1;
+
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .logo {
+    grid-area: logo;
+    fill: var(--grey-700);
+    width: 213px;
+    height: 50px;
+  }
+
+  .links-container {
+    grid-area: links;
+    align-self: end;
+    padding-bottom: 3px;
+  }
+
+  .copy-right {
+    grid-area: copy-right;
+    align-self: center;
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.01em;
+    color: var(--grey-700);
+    margin-top: 1px;
+  }
+
+  .social-links-container {
+    grid-area: social-links;
+    align-self: center;
+  }
+
+  .links-container,
+  .social-links-container {
+    justify-self: end;
+    display: flex;
+    gap: 32px;
+  }
+}
+
+@media (max-width: $desktop-big) {
+  .bg {
+    width: 1495px;
+    height: 386px;
+    bottom: -121px;
+    left: -22px;
+  }
+}
+
+@media (max-width: $tablet-sm) {
+  footer {
+
+    .bg {
+      top: auto;
+      left: 0;
+      width: 949px;
+      height: 238px;
+      bottom: -96px;
+    }
+
+    .footer-container {
+      grid-template-rows: 50px 300px 40px;
+      gap: 0;
+      grid-auto-flow: row;
+      grid-template-areas:
+        'logo social-links'
+        'links social-links'
+        'copy-right copy-right';
+
+      padding: 26px 26px 18px;
+
+      .logo {
+        width: 200px;
+        height: 47px;
+      }
+
+      .links-container {
+        justify-self: start;
+        align-self: stretch;
+        flex-direction: column;
+        gap: 12px;
+        padding-top: 41px;
+      }
+
+      .copy-right {
+        align-self: stretch;
+        font-size: 18px;
+        margin-top: 1px;
+        letter-spacing: -0.01em;
+      }
+
+      .social-links-container {
+        align-self: self-start;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.license {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 504px;
+  margin: 0 auto;
+
+
+  .icon {
+    width: 40px;
+    height: 40px;
+    color: var(--grey-500);
+    margin-bottom: 8px;
+  }
+
+  .yellow {
+    color: var(--yellow);
+  }
+
+  .txt {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: $mobile) {
+  .license {
+    width: auto;
+
+    .icon {
+      width: 35px;
+      height: 35px;
+    }
+
+    .txt {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 27px;
+    }
+  }
+}

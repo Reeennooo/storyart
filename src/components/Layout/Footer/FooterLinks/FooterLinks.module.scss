@@ -1,0 +1,31 @@
+.link {
+  display: flex;
+  font-size: 22px;
+  line-height: 30px;
+  color: #fff;
+  background: none;
+  border: none;
+  padding: 0;
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--yellow-light);
+  }
+}
+
+.link-icon {
+  width: 40px;
+  height: 40px;
+}
+
+@media (max-width: $tablet-sm) {
+  .link {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .link-icon {
+    width: 34px;
+    height: 34px;
+  }
+}

@@ -1,0 +1,130 @@
+.wrapper {
+  position: relative;
+
+  &--readonly {
+    opacity: 0.4;
+  }
+
+  // Ошибка
+  &--error {
+    .input {
+      border-color: var(--red);
+
+      &:not([readonly]):focus {
+        border-color: var(--red);
+      }
+    }
+
+    .label-placeholder {
+      color: var(--red);
+    }
+  }
+
+  &--error:not(.wrapper--readonly) {
+    .input:hover {
+      border-color: var(--red);
+    }
+  }
+}
+
+.input {
+  outline: none;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--grey-700);
+  border-radius: 4px;
+  padding: 15px 16px;
+  transition: border-color var(--transition);
+
+  font-family: var(--manrope-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: var(--grey-300);
+
+  // Изначально placeholder скрыт, т.к в его роли выступает label.
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:not([readonly]) {
+    &:focus {
+      border-color: var(--white);
+
+      & ~ .label-placeholder {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+        top: 0;
+        left: 12px;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: var(--white);
+      }
+    }
+  }
+
+  &:not(:placeholder-shown) {
+    & ~ .label-placeholder {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.4px;
+      top: 0;
+      left: 12px;
+    }
+  }
+
+  &--password {
+    padding-right: 30px;
+  }
+}
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 50px var(--grey-800) inset;
+  -webkit-text-fill-color: var(--grey-300);
+  caret-color: var(--grey-300);
+}
+
+.show-password {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.label-placeholder {
+  padding: 0 4px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  transition: var(--transition);
+  transition-property: top, left, font-size;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: var(--grey-300);
+  cursor: text;
+}
+
+.eye {
+  fill: none;
+  stroke: var(--grey-300);
+
+  &.hidden {
+    display: none;
+  }
+}
